@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ League - Home</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0b0d;
+            color: #fff;
+            padding: 0;
+        }
+
+        h1, h2, p {
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(45deg, #1c1c1c, #ff4d4d);
+            border-bottom: 3px solid #ff4d4d;
+        }
+
+            header h1 {
+                font-size: 4rem;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            }
+
+            header p {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                letter-spacing: 1px;
+            }
+
+        /* Card Container */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Reduced gap between cards */
+            flex-wrap: wrap; /* Allow wrapping if necessary */
+            margin-top: 40px;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: #ff4d4d;
+            color: #fff;
+            width: 150px; /* Reduced width */
+            height: 200px; /* Reduced height */
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow: 0 5px 20px rgba(255, 77, 77, 0.5);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+            /* Card Hover Effect */
+            .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 30px rgba(255, 77, 77, 0.7);
+                background-color: #1c1c1c;
+                color: #ff4d4d;
+            }
+
+            /* Card Title */
+            .card h3 {
+                font-size: 1.2rem; /* Reduced font size */
+                margin-bottom: 10px;
+                letter-spacing: 1px;
+                font-weight: bold;
+            }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #1e1e1e, #003366);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+            .about h2 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: #ff4d4d;
+            }
+
+            .about p {
+                font-size: 1.2rem;
+                line-height: 1.6;
+                margin: 0 auto;
+                max-width: 900px;
+            }
+
+        /* Footer */
+        footer {
+            background-color: #1c1c1c;
+            color: #ff4d4d;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 2px solid #ff4d4d;
+            font-size: 1rem;
+        }
+
+        /* Hover Animations */
+        .card:focus {
+            outline: none;
+        }
+
+        .about p {
+            color: #ccc;
+        }
+
+        /* Gradient Background */
+        .gradient-background {
+            background: linear-gradient(90deg, #1c1c1c, #ff4d4d);
+            background-size: 400% 400%;
+            animation: gradientAnimation 8s ease infinite;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="gradient-background">
+
+        <!-- Header -->
+        <header>
+            <h1>Welcome to DJ League</h1>
+            <p>The Ultimate Gaming Tournament of 2024</p>
+            <p>Compete, Conquer, and Dominate the World of Esports</p>
+        </header>
+
+        <!-- Navigation Section (Cards) -->
+        <section class="card-container">
+            <a href="/Details" class="card">
+                <h3>Details</h3>
+            </a>
+            <a href="/Games" class="card">
+                <h3>Games</h3>
+            </a>
+            <a href="/Matches" class="card">
+                <h3>Matches</h3>
+            </a>
+            <a href="/PricePools" class="card">
+                <h3>Prize Pools</h3>
+            </a>
+            <a href="/Regions" class="card">
+                <h3>Regions</h3>
+            </a>
+            <a href="/Teams" class="card">
+                <h3>Teams</h3>
+            </a>
+            <a href="/Tournaments" class="card">
+                <h3>Tournaments</h3>
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2>About DJ League</h2>
+            <p>
+                DJ League is not just another esports tournament — it's the heart of competitive gaming. With cutting-edge technology, high stakes, and a global stage for players to compete, DJ League is the pinnacle of esports excellence. Players from across the world will clash in thrilling, high-octane tournaments to prove who is the best.
+            </p>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2024 DJ League. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

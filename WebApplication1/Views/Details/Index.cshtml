@@ -1,0 +1,154 @@
+﻿@model IEnumerable<DJ_s_League.Models.Detail>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<head>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0b0d;
+            color: #fff;
+            padding: 0;
+        }
+
+        h1, h2, p {
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(45deg, #1c1c1c, #ff4d4d);
+            border-bottom: 3px solid #ff4d4d;
+        }
+
+            header h1 {
+                font-size: 4rem;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            }
+
+            header p {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                letter-spacing: 1px;
+            }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+            .nav-buttons a {
+                text-decoration: none;
+            }
+
+            .nav-buttons button {
+                background-color: #ff4d4d;
+                color: #fff;
+                font-size: 1.2rem;
+                padding: 18px 40px;
+                border: 2px solid transparent;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                box-shadow: 0 5px 20px rgba(255, 77, 77, 0.5);
+            }
+
+                .nav-buttons button:hover {
+                    background-color: #1c1c1c;
+                    color: #ff4d4d;
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 30px rgba(255, 77, 77, 0.7);
+                }
+
+        /* Content Section */
+        .container {
+            padding: 40px 20px;
+        }
+
+        .card {
+            background-color: #1c1c1c;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: #fff;
+            box-shadow: 0 5px 20px rgba(255, 77, 77, 0.5);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-footer {
+            text-align: center;
+            padding: 10px;
+            background: #ff4d4d;
+            color: #fff;
+            border-top: 2px solid #fff;
+        }
+
+        footer {
+            background-color: #1c1c1c;
+            color: #ff4d4d;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 2px solid #ff4d4d;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gradient-background">
+
+        <!-- Header -->
+        <header>
+            <h1>Details Overview</h1>
+            <p>Explore and manage the event details for the DJ League Tournament.</p>
+        </header>
+
+        <!-- Content Section -->
+        <section class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach (var item in Model)
+                {
+                    <div class="col">
+                        <div class="card bg-dark text-white shadow-sm rounded">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Name</h5>
+                                <p><strong>Start Date:</strong> @item.StartDate.ToString("MMMM dd, yyyy")</p>
+                                <p><strong>End Date:</strong> @item.EndDate.ToString("MMMM dd, yyyy")</p>
+                                <p><strong>Minimum Level:</strong> @item.MinimumLevel</p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-light btn-sm">Edit</a>
+                                <a href="@Url.Action("Details", new { id = item.Id })" class="btn btn-info btn-sm mx-2">View Details</a>
+                                <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-danger btn-sm">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 DJ League. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+</body>

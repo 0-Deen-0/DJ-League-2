@@ -1,0 +1,135 @@
+﻿<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DJ League</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0b0d;
+            color: #fff;
+            padding: 0;
+        }
+
+        h1, h2, p {
+            color: #fff;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(45deg, #1c1c1c, #ff4d4d);
+            border-bottom: 3px solid #ff4d4d;
+        }
+
+        /* Logo Styling */
+        .navbar-brand img {
+            max-height: 80px; /* Adjust the height to fit your design */
+            width: auto;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #1c1c1c;
+            border-bottom: 2px solid #ff4d4d;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+
+        .navbar-toggler {
+            background-color: #ff4d4d;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important; /* Ensure that "Home" and "Learn More" are white */
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #ff4d4d !important;
+            }
+
+        .navbar-collapse {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1c1c1c;
+            color: #ff4d4d;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 2px solid #ff4d4d;
+            font-size: 1rem;
+        }
+
+        /* Gradient Background */
+        .gradient-background {
+            background: linear-gradient(90deg, #1c1c1c, #ff4d4d);
+            background-size: 400% 400%;
+            animation: gradientAnimation 8s ease infinite;
+        }
+    </style>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+</head>
+<body class="gradient-background">
+
+    <!-- Header Section -->
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
+            <div class="container-fluid">
+                <!-- Logo in the Navbar -->
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/css/Logo.jpeg" alt="DJ League Logo" /> <!-- Replace with your logo file path -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AboutUs">Learn about us</a>
+                        </li>
+                    </ul>
+                   
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer text-muted">
+        <div class="container">
+            &copy; 2024 DJ League - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-muted">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
